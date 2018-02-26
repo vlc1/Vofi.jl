@@ -22,11 +22,11 @@ const ix = 1
 # typedef double (*integrand)(void*, vofi_creal []);
 function generic_integrand_2d(func, x_::Ptr{Cdouble})
     x = unsafe_wrap(Array, x_, (2,))
-    return func(x)
+    return func(x...)
 end
 function generic_integrand_3d(func, x_::Ptr{Cdouble})
     x = unsafe_wrap(Array, x_, (3,))
-    return func(x)
+    return func(x...)
 end
 
 #
